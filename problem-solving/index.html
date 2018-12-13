@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+  <head>
+    <title>michael-barlow.net -- Michael Barlow</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <link rel=stylesheet type=text/css href="/static/css/style.css" />
+    <link rel=stylesheet type=text/css href="/static/css/hilite.css" />
+    
+    <script src="/static/js/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    
+  </head>
+
+  <body>
+      <p align="center">
+      <font size="+3"><a style="color:white;" href="/">michael-barlow.net</a></font><br/>
+      <font size="-1"><a style="color:white;" href="/about/">About</a></font>
+      <font size="-1"><a style="color:white;" href="/portfolio/">Portfolio</a></font>
+      <hr>
+      </p>
+
+      <div class="container">
+          
+    <h1>Inspiring problem solving in Software Development</h1>
+    <p>Software development, and indeed Computer Science in general, was something I came across relatively late in the game compared to my peers. My high-school never offered any courses in software-development, and whilst I was always naturally curious to know how things worked, I was never formally introduced to learning how to code until I started studying Electrical Engineering at university. Within my first few weeks of Introduction to Programming in Java, I knew this was what I wanted to do, even if I didn't really know why.</p>
+<p>Since that fateful semester, I've been fortunate enough to work on many different software projects, mostly Android applications, with some minor forays into other frameworks and languages. Sometimes the work is very demanding, other times it can be long and tedious. A lot of the time, though, it was quite satisfying, and a lot of fun. </p>
+<p>Having had some time off to travel and reflect, I've tried to narrow down what I've enjoyed the most so far in my software development career. Certainly the environment I've worked in was a big factor, in particular the people I've worked with. And I've really enjoyed being given the opportunity to work on some really beautiful and innovative user experiences. But my main motivation can be summed up as follows:</p>
+<blockquote>
+<p><em>Being able to solve interesting problems in creative and innovative ways.</em></p>
+</blockquote>
+<p>I imagine this is fairly common among software developers, but it's definitely my primary driving force within this line of work, and it's the number one thing I consider when looking at a potential new job. I am lucky enough to be in a career which involves solving problems with a vast array of tools. There is always more than one way to solve a problem, and finding a way that is efficient and/or innovative is fun, exciting and satisfying.</p>
+<p>In light of that, here are some great examples of innovative problem-solving in computer science that I find highly entertaining and inspiring. Note that not all of these involve programming necessarily, but they all involve computers and ingenuity to solve. I hope to add more to these in the future.</p>
+<h2><a href="http://www.muppetlabs.com/~breadbox/txt/acre.html">Reverse-Engineering the Across-Lite crossword scrambling algorithm</a></h2>
+<p align="center">
+  <img src="/static/images/crossword2.png" alt="crossword2"/>
+</p>
+
+<blockquote>
+<p><em>"So, my friend contacted me and described the situation, and asked: Do you think you might be able to reverse-engineer this scrambling algorithm? My response was: maybe. Hard to say, but I'm willing to try. Privately, though, my reaction was THIS IS MY DREAM PROJECT AND THERE IS NO WAY I'M NOT SPENDING ALL AVAILABLE FREE TIME ON THIS."</em></p>
+</blockquote>
+<p>This extensive write-up, written by Brian Raiter, details his 6-week journey trying to reverse-engineer the algorithm used by Across-Lite to encrypt solutions to crossword puzzles. His process here is masterful - using divide-and-conquer to separate larger problems into smaller ones, using scripts to collect and collate data, and then presenting that data in a way to try and find patterns. His miticulous documentation is long, but incredibly fascinating, and it's an article I read again at least once a year. His approach to solving this difficult problem is something any engineer can learn from, and his enthusiasm is infectious.</p>
+<h2><a href="http://sol.gfxile.net/dr_gdm.html">Porting Death Rally from DOS to Windows</a></h2>
+<p align="center">
+  <img src="/static/images/death-rally.jpg" alt="death-rally"/>
+</p>
+
+<p>Just a really neat writeup of a port of Death Rally from DOS to modern-day Windows. It's interesting to see how Jari Komppa takes code written for older, more primitive technology and adapts it to use modern libraries. Funny how, despite how it's written in C, there are still some major differences between Watcom and Microsoft's compilers' interpretations of the language, leading to outright errors when he throws it into Visual Studio. I also like how he uses open-source code to try and decrypt some of the encrypted resources, and to interpret some of the sound files. </p>
+<h2><a href="https://web.archive.org/web/20100520020401/http://therealedwin.com/2010/05/17/how-linux-saved-a-fast-food-giant">How Linux Saved A Fast Food Giant</a></h2>
+<p align="center">
+  <img src="/static/images/burger-hearts-tux.jpg" alt="burger-hearts-tux"/>
+</p>
+
+<p>This write-up by "TheRealEdwin" is a really great example of using freely-available tools in an ingenious way to solve a pressing problem. He uses a small obscure distribution of Linux created as a "rescue linux" for his own purposes. He then leverages the existing architecture to distribute this to hundreds of fast-food restaurants across the country. This allows for a widespread problem to be fixed quickly and easily. It's also a nice example of decentralised open-source programs solving issues, that incidentally are caused by centralised closed-source programs (in this case McAfee anti-virus). </p>
+<h2><a href="http://blather.michaelwlucas.com/archives/605">Michael W. Lucas' My OpenBSD story</a></h2>
+<p><p align="center">
+  <img src="/static/images/openbsd.png" alt="OpenBSD"/>
+</p></p>
+<p>Again another story about someone managing to hack together a solution for a problem that urgently needs fixing, using a limited amount of materials. I'm not sure exactly what OpenBSD does here that Linux wouldn't do, but whatever it does, it works quite well. Although it was a small temporary fixed that was later replaced with more professional hardware, it's a great demonstration of what you can do with a bunch of minimal materials and the right software.</p>
+<h2><a href="http://www.ee.ryerson.ca/~elf/hack/recovery.html">Unix Recovery Legend</a></h2>
+<p><p align="center">
+  <img src="/static/images/unix-shell.jpg" alt="UNIX shell"/>
+</p></p>
+<p>Have you ever known anyone who's actually run "sudo rm /" on their system? And lived to tell the tale? This is pretty much exactly that. Luckily the command was stopped before too much damage was done, and there was some utilities still available for use. Some utilities, like <code>ls</code> and <code>cat</code> were missing, but these were overcome by creative uses of <code>echo</code> and <code>grep</code>. In the end, though, the day was saved by an intimate knowledge of VAX assembler, which allowed the "legend" of the story to create and compile a small program, <em>manually</em> transfer the program to another computer logged in as root on the time, which create a /etc directory allowing them create the utilities required for <code>ftp</code>, and then finally using <code>ftp</code> to transfer data from a backup. A brilliant solution in the face of adversity.</p>
+<h2><a href="https://www.facebook.com/notes/facebook-engineering/under-the-hood-dalvik-patch-for-facebook-for-android/10151345597798920">Dalvik patch for Facebook for Android</a></h2>
+<p>This one is a little different from the rest, in that it happened in a much larger company. Facebook has a great culture of fostering Engineering talent, and providing no obstacles towards having their engineers do what they do best: solve problems. Their solution was incredibly hacky and somewhat dangerous - modifying the internals of the VM at runtime is not usually a good thing! But looking back, this was a temporary solution to make sure the app ran on versions of Android below 4.0, and there are less and less phones that run on those versions these days.</p>
+<p>Some people believe they were solving a problem they shouldn't have needed to solve in the first place by having way too many methods in the app. Others, like myself, see it as an incredible display of perseverance and ingenuity. Instead of giving up at what appears to be a barrier in the OS itself, these guys kept at it, prompting a deep study of the internals of the OS itself, and coming up with a reliable solution.</p>
+<h2><a href="http://blog.moertel.com/posts/2013-12-14-great-old-timey-game-programming-hack.html">A Great Old-Timey Game-Programming Hack</a></h2>
+<p>Tom Moertel's description of how he managed to get sufficiently fast performance out of old hardware using crazy programming tricks is satisfying to read. This hearkens back to the days of the 6809 processor, which was a small step up from the 6502 processor. It used much of the same instruction set, but there were a few key instructions that allowed the author to shave off precious CPU cycles in order to acheive an acceptable framerate. A great example of perserverance and ingenuity to squeeze the most performance out of available hardware.</p>
+<h2>Dirty Coding Tricks (Gamasutra) <a href="http://www.gamasutra.com/view/feature/4111/dirty_coding_tricks.php">Part 1</a><a href="http://www.gamasutra.com/view/news/249475/More_dirty_coding_tricks_from_game_developers.php">Part 2</a></h2>
+<p><p align="center">
+  <img src="/static/images/dirty-code.jpg" alt="Dirty Code"/>
+</p>
+This is actually a couple of articles showcasing a bunch of quick and dirty programming tricks used to meet those infamous deadlines too common in game development. Some of these are quite clever, some are a bit horrifying, but they're all very entertaining to read about. A lot of the time the moral appears to be along the lines of "if the user doesn't notice it, it's not a problem", which is a little depressing. Some of them though, like "Meet My Dog Patches", warns against treating the symptoms of a problem and not the root cause. My favourite story is probably "The Programming Antihero", which is less about clever feats of engineering than it is about predicting a management problem and preparing for it in a devious yet arguably clever way.</p>
+<h2><a href="http://gamasutra.com/blogs/DaveBaggett/20131031/203788/My_Hardest_Bug_Ever.php">My Hardest Bug Ever (Crash Bandicoot)</a></h2>
+<p><p align="center">
+  <img src="/static/images/crash.png" alt="Crash"/>
+</p>
+This article by Dave Baggett details his process on tracking down a particularly elusive bug in Crash Bandicoot for the original Playstation. It's a good example of using "divide-and-conquer" to narrow the problem down to the smallest bit of offending code, and then removing or changing variables to try and understand the cause of the problem. 
+Crash Bandicoot is a very impressive game technically, particularly for its time. Dave Baggett also <a href="https://www.quora.com/How-did-game-developers-pack-entire-games-into-so-little-memory-twenty-five-years-ago/answer/Dave-Baggett?srid=z9ZA&amp;share=1">talks about</a> how they managed to fit the game in such a small amount of RAM (2MB!). There's <a href="http://www.naughtydog.com/site/post/making_crash_bandicoot_by_andy_gavin_and_jason_rubin/">a great write-up</a> on the creation process of that game, which is a fascinating read as well.</p>
+
+
+          <footer>
+              <hr />
+              <p style="color:white;">Michael Barlow, &copy; 2015</p>
+          </footer>
+  </div>
+  </body>
+  </html>

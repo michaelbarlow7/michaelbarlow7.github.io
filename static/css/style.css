@@ -1,0 +1,107 @@
+/*
+Theme Name: barbs
+Theme URI: https://www.michael-barlow.net/
+Discription: I dunno
+Author: barbs
+Version 1.0
+Text Domain: barbs
+*/
+
+body {
+    font-family:Arial;
+    background:black;
+    margin-left:1em;
+    margin-right:1em;
+    color:#0F0;
+}
+
+/* unvisited link */
+a:link {
+    color:#0FF;
+    text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+    color:#FF0;
+}
+
+/* mouse over link */
+a:hover {
+    color:white
+}
+
+h1{
+    text-align:center;
+    color:#0f0;
+    background-color:#030;
+    padding-top:5pt;
+    padding-bottom:5pt;
+}
+
+h2{
+    clear: both;
+    text-align:center;
+    color:#0F0;
+    background-color:#030;
+    padding-top:5pt;
+    padding-bottom:5pt;
+}
+
+h3{
+    text-align:center;
+    color:#0F0;
+    background-color:#030;
+    padding-top:5pt;
+    padding-bottom:5pt;
+}
+
+h4{
+    text-align:center;
+    color:#0F0;
+    background-color:#030;
+    padding-top:5pt;
+    padding-bottom:5pt;
+}
+
+h5{
+    text-align:center;
+    color:#0F0;
+    background-color:#030;
+    padding-top:5pt;
+    padding-bottom:5pt;
+}
+
+h6{
+    text-align:center;
+    color:#0F0;
+    background-color:#030;
+    padding-top:5pt;
+    padding-bottom:5pt;
+}
+
+/* This styles the code blocks */
+pre{
+    padding-left: 3em;
+    color:#0A0;
+    white-space:pre-wrap;
+}
+
+blockquote {
+    color:#0A0;
+    font-style: italic;
+    border-left:2px solid;
+    padding-left:1em
+}
+
+.img-right{
+    float:right;
+    margin:0px 1em 1em 0px;
+    padding-left:1em;
+}
+
+.img-left{
+    float:left;
+    margin:0px 1em 1em 0px;
+    padding-right:1em;
+}

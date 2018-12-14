@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>michael-barlow.net -- Michael Barlow</title>
+    <title>michaelbarlow.com.au -- Michael Barlow</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,7 +16,7 @@
 
   <body>
       <p align="center">
-      <font size="+3"><a style="color:white;" href="/">michael-barlow.net</a></font><br/>
+      <font size="+3"><a style="color:white;" href="/">michaelbarlow.com.au</a></font><br/>
       <font size="-1"><a style="color:white;" href="/about/">About</a></font>
       <font size="-1"><a style="color:white;" href="/portfolio/">Portfolio</a></font>
       <hr>
@@ -25,13 +25,16 @@
       <div class="container">
           
     <h1>Creating a GIMP plugin for TempleOS&#39; .GRA files</h1>
-    <p>A few years ago I came across <a href="http://www.templeos.org/">TempleOS</a>, an operating system created over 12 years by a man called Terry Davis. At first glance it looked quite complicated and daunting, perhaps even a bit primitive. A closer look revealed that Terry had put quite a lot of thought into creating his ideal operating system. His forum posts and documentation showed that he knows quite a lot about the inner workings of computers, more than I could hope to understand. He even created his own programming language, a dialect of C, and implemented his file formats and compression system.</p>
+    <h2>UPDATE: 14/12/2018</h2>
+<p>I wrote this post in 2015, but never properly published it, along with this website. Since writing the post I discovered that Terry Davis has sadly passed away. I decided that it would be worth publishing my experience of interacting with him. I've tried to be as respectful as possible with regards to his mental illness. I've also updated the links to this website to use archived ones, as they are now dead.</p>
+<h2>Creating a GIMP plugin for TempleOS' .GRA files</h2>
+<p>A few years ago I came across <a href="http://www.templeos.org/">TempleOS</a>, an operating system created over 12 years by a man called Terry Davis. At first glance it looked quite complicated and daunting, perhaps even a bit primitive. A closer look revealed that Terry had put quite a lot of thought into creating his ideal operating system. His forum posts and documentation showed that he knows quite a lot about the inner workings of computers, more than I could hope to understand. He even created his own programming language, a dialect of C, and implemented his file formats and compression system.</p>
 <div class="img-right">
     <img src="/static/images/templeos.png" alt="TempleOS"/>
 </div>
 
-<p>One thing that also becomes apparent from briefly looking at his website - the man is schizophrenic. Terry believes that his operating system is "God's official temple", of which he is the high priest. His <a href="http://www.templeos.org/Wb/Doc/Charter.html">charter</a> compares his operating system to Solomon's temple, a <em>"special place for meditation, to do offerings, a community center, a home to God's beauty, that encouraged love of God"</em>. A lot of the limitations of TempleOS are in place as a result of "commandments" of sort from God. The resolution is permanently set at 640x480, and there are only 16 colors. There is no networking functionality, there is a 100 000 line-limit on the codebase, and there is no permission system - everything happens in kernel mode. There is full access to all of the hardware, and no encryption. It seems to espouse some of the "hacker" values that came about in the 60s era of computing - a sort of playground of sorts, aimed to allow the user to explore their hardware whilst applying limitations to keep things simple. </p>
-<p>On Terry's website is a list of "<a href="http://www.templeos.org/Wb/Doc/Demands.html">demands</a>", a wishlist of sorts aimed at third-parties in order to facilitate the running of his operating system. They range from hardware demands (hardware reset switches mandatory on desktop computers) to software demands (removing secure-boot in Microsoft Windows). Most of these seem unlikely to be fulfilled, but one of them caught my eye:</p>
+<p>One thing that also becomes apparent from briefly looking at his website - the man is schizophrenic. Terry believes that his operating system is "God's official temple", of which he is the high priest. His <a href="https://web.archive.org/web/20160113003014/https://www.templeos.org/Wb/Doc/Charter.html">charter</a> compares his operating system to Solomon's temple, a <em>"special place for meditation, to do offerings, a community center, a home to God's beauty, that encouraged love of God"</em>. A lot of the limitations of TempleOS are in place as a result of "commandments" of sort from God. The resolution is permanently set at 640x480, and there are only 16 colors. There is no networking functionality, there is a 100 000 line-limit on the codebase, and there is no permission system - everything happens in kernel mode. There is full access to all of the hardware, and no encryption. It seems to espouse some of the "hacker" values that came about in the 60s era of computing - a sort of playground of sorts, aimed to allow the user to explore their hardware whilst applying limitations to keep things simple. </p>
+<p>On Terry's website is a list of "<a href="https://web.archive.org/web/20160113003014/http://www.templeos.org/Wb/Doc/Demands.html">demands</a>", a wishlist of sorts aimed at third-parties in order to facilitate the running of his operating system. They range from hardware demands (hardware reset switches mandatory on desktop computers) to software demands (removing secure-boot in Microsoft Windows). Most of these seem unlikely to be fulfilled, but one of them caught my eye:</p>
 <blockquote>
 <p>Windows' Paint and Linux's Gimp must support TempleOS .GRA graphics files. GRA Files are much cleaner than BMP files.</p>
 </blockquote>
@@ -66,8 +69,8 @@
 ./Wb/Demo/Games/Stadium/StadiumBG.GRA.Z
 </code></pre>
 <p>...that's it? Really?</p>
-<p>The most useful of these was <a href="http://www.templeos.org/Wb/Doc/GRAFiles.html">GRAFiles.html</a>, which described the GRA file format pretty comprehensively. The format was written in <a href="http://www.templeos.org/Wb/Doc/HolyC.html">HolyC</a>, which was actually fairly similar to C. One of the cool thing about it was that the primitive types was that it showed how many bits each one was comprised of. Useful! </p>
-<p>I then tried to read the bytes of NewEngland.GRA.Z to see how it corresponded with the description. Unfortunately, this wasn't a straight .GRA file yet, this was a .Z file. It'd been compressed. Reading <a href="http://www.templeos.org/Wb/Doc/Tips.html">Tips.html</a> revealed the following:</p>
+<p>The most useful of these was <a href="https://web.archive.org/web/20160113003014/http://www.templeos.org/Wb/Doc/GRAFiles.html">GRAFiles.html</a>, which described the GRA file format pretty comprehensively. The format was written in <a href="http://www.templeos.org/Wb/Doc/HolyC.html">HolyC</a>, which was actually fairly similar to C. One of the cool thing about it was that the primitive types was that it showed how many bits each one was comprised of. Useful! </p>
+<p>I then tried to read the bytes of NewEngland.GRA.Z to see how it corresponded with the description. Unfortunately, this wasn't a straight .GRA file yet, this was a .Z file. It'd been compressed. Reading <a href="https://web.archive.org/web/20160113003014/http://www.templeos.org/Wb/Doc/Tips.html">Tips.html</a> revealed the following:</p>
 <blockquote>
 <p>Filenames ending in ".Z" will be automatically compressed and uncompressed 
 when read or written.  The compression method is not supported by other 
@@ -79,7 +82,7 @@ while in Linux.</p>
     <a href="https://www.youtube.com/watch?v=6jJYLoYvxhI"><img src="/static/images/pilgrim.png" alt="Pilgrim video"/></a>
 </div>
 
-<p>I eventually found TOSZ.CPP in a directory called <a href="http://www.templeos.org/Wb/Linux/">Linux</a>. I compiled this and ran it on a txt file first to check it worked, which it did. I then tried running this on NewEngland.GRA.Z and it worked, I think. Based on where the image was located, I guessed it was supposed to look something like the image on the left. Here's what the first few lines of the hexdump looked like:</p>
+<p>I eventually found TOSZ.CPP in a directory called <a href="https://web.archive.org/web/20160113003014/http://www.templeos.org/Wb/Linux/">Linux</a>. I compiled this and ran it on a txt file first to check it worked, which it did. I then tried running this on NewEngland.GRA.Z and it worked, I think. Based on where the image was located, I guessed it was supposed to look something like the image on the left. Here's what the first few lines of the hexdump looked like:</p>
 <pre><code>0000000: f303 0000 f803 0000 9305 0000 0100 0000  ................
 0000010: 2738 0000 0000 0000 681f 1600 0000 0000  '8......h.......
 0000020: 0201 8081 8283 8485 8687 8100 8a8b 8c8d  ................
@@ -170,6 +173,10 @@ Recently GIMP got rid of 16 color Windows BMP files.  That sucked.  I made my ow
 I am so happy you did that.
 </code></pre>
 <p>I was pretty pleased that he was happy with what I was doing. So many warm fuzzies! I took his test file and imported it. Looked perfect! </p>
+<p align="center">
+  <img src="/static/images/testgra.png" alt="Test GRA file"/>
+</p>
+
 <p>The reading logic was almost complete. I added the logic for reading the compression flag, and I considered doing the custom palette logic, but I wasn't sure it would ever be used if the OS can only display those 16 colours anyway. </p>
 <h2>Exporting .GRA files</h2>
 <p>I decided to make a start on the .GRA writing code. If I can get all this working I might be able to seend a preliminary build to Terry to get him to try it out himself. Looking at the .bmp file writing code, it looked pretty much like I'd be doing the same as the reading code, but in reverse...not sure what I expected! I decided to start writing it from scratch, rather than modifying the .bmp code, since again, that code was quite complicated for what we needed. </p>
@@ -184,8 +191,8 @@ I am so happy you did that.
 </code></pre>
 <p>According to <a href="http://developer.gimp.org/api/2.0/libgimp/libgimp-gimppixelrgn.html">the docs</a> it looked like it should be encoded as 1 byte per pixel. Then I remembered I'd added an alpha channel whilst playing around with it. So each pixel was represented by two bytes: the first being the colour index and the second being the opacity. With this information it was easy to create a file with the data uncompressed. I compared it the original uncompressed body and there was no difference. Success!</p>
 <p>Next step was to work on the compression. There was no compression code in the TOSZ program, but Terry sent through Compress.CPP, which was actually written HolyC. So I translated it to C and added the code into the existing TOSZ.c file. This was fairly easy: a lot of the calls were the same, but with capitalised first letters (Free instead of free, for example). Some of the code in Compress.CPP was already in TOSZ.c.</p>
-<p>There was one function, however, that was actually implemented in assembly: BFieldOrU32. According to the <a href="http://www.templeos.org/Wb/Kernel/KernelB.html">code comments</a>, it "OR"s the U32 (integer) into the bitfield, but I wasn't too sure of the specifics. At this point I thought of asking for Terry's help, but I instead I rolled up my sleeves and looked at the assembly. I'd looked at <a href="https://skilldrick.github.io/easy6502/">6502 assembly</a> before, how hard could x86 assembly be?</p>
-<p>Turns out, not that hard! Here's a breakdown of the <a href="http://www.templeos.org/Wb/Kernel/KUtils.html">assembly</a>:</p>
+<p>There was one function, however, that was actually implemented in assembly: BFieldOrU32. According to the <a href="https://web.archive.org/web/20160113003014/http://www.templeos.org/Wb/Kernel/KernelB.html">code comments</a>, it "OR"s the U32 (integer) into the bitfield, but I wasn't too sure of the specifics. At this point I thought of asking for Terry's help, but I instead I rolled up my sleeves and looked at the assembly. I'd looked at <a href="https://skilldrick.github.io/easy6502/">6502 assembly</a> before, how hard could x86 assembly be?</p>
+<p>Turns out, not that hard! Here's a breakdown of the <a href="https://web.archive.org/web/20160113003014/http://www.templeos.org/Wb/Kernel/KUtils.html">assembly</a>:</p>
 <pre><code>    PUSH    RBP
     MOV     RBP,RSP                 ; Some stack pointer setup stuff
     MOV     RBX,U64 SF_ARG2[RBP]    ; POS in RBX
@@ -217,7 +224,7 @@ I am so happy you did that.
 </code></pre>
 <p>and it works! Doing a diff on my .GRA and the original yields no changes. Looks like my plugin can do a successful round trip!</p>
 <h2>Cleaning it up.</h2>
-<p>I discovered a bit later that there was a <a href="http://developer.gimp.org/plug-in-template.html">plug-in template</a> available that comes with all the autoconf/automake stuff to help integrate the code with the framework. I had a go at shoving my plugin into the template, but there were way too many places that I needed to change the code, and I coudln't get it to work in the end, so I stuck with my simpler Makefile. Hopefully it'll be portable enough...</p>
+<p>I discovered a bit later that there was a <a href="https://web.archive.org/web/20160113003014/http://developer.gimp.org/plug-in-template.html">plug-in template</a> available that comes with all the autoconf/automake stuff to help integrate the code with the framework. I had a go at shoving my plugin into the template, but there were way too many places that I needed to change the code, and I coudln't get it to work in the end, so I stuck with my simpler Makefile. Hopefully it'll be portable enough...</p>
 <p>Terry had mentioned that he'd like to be able to get images from the internet and save them as .GRA files. To do this, I would need to make sure the GIMP project was in indexed mode with 16 colours, specifically THE 16 colours specified in TempleOS. I tried to see if I could convert an image to use the colour palette. There was a <a href="http://developer.gimp.org/api/2.0/libgimp/libgimp-gimpconvert.html#gimp-image-convert-indexed">method</a>, but it requires the palette to be installed, since it gets addressed by name.</p>
 <p>What if I installed the palette as part of the plugin installation? It wouldn't be that hard - once I created a palette file I could just copy it to the user's palette directory as part of the "make install" process. I'm pretty sure this is all the gimptool does when it installs a binary plugin anyway.</p>
 <p>I found out how to create a palette file - it was pretty simple really:</p>
